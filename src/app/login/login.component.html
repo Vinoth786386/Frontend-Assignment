@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h4>Enter your Login Credentials</h4>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username</label>
+                        <input formControlName="username" type="text" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="Help">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input formControlName="password" type="password" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="isLoggingIn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<p *ngIf="loginError" class="error-message d-flex justify-content-center">Invalid login credentials. Please try again.
+</p>
+<p *ngIf="InvalidLogin" class="error-message d-flex justify-content-center">
+</p>
